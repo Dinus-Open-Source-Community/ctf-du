@@ -1,0 +1,7 @@
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+.skill-bar {
+    transition: width 1s ease-in-out;
+}

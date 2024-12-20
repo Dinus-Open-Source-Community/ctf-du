@@ -1,0 +1,10 @@
+version: '3'
+services:
+  web:
+    build: .
+    ports:
+      - "3126:80"
+    volumes:
+      - ./src:/var/www/html
+    environment:
+      - FLAG=DCTF{P0rtf0l10_4dm1n_Byp4ss_2024}

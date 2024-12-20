@@ -1,0 +1,8 @@
+services:
+  get:
+    container_name: get
+    build: .
+    ports:
+      - 3000:3000
+    environment:
+      - FLAG=DCTF{7h15_iS_jUsT_B3g1n!nG}
