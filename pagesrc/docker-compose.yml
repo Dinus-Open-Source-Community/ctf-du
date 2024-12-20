@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  web:
+    build: .
+    ports:
+      - "3127:80"
+    volumes:
+      - ./src:/var/www/html
+    restart: unless-stopped
