@@ -1,0 +1,39 @@
+{
+    "name": "DOSCOM/web-cloner",
+    "description": "A web page cloning tool for educational purposes",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "DOSCOM CTF Team"
+        }
+    ],
+    "require": {
+        "php": ">=8.1.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^10.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "UdinusCloner\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "UdinusCloner\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "phpunit",
+        "lint": "phpcs --standard=PSR12 src/",
+        "fix": "phpcbf --standard=PSR12 src/"
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true
+    },
+}
