@@ -2,8 +2,8 @@
 FROM python:3.9-slim
 
 # Set environment variables
-ENV PYTHONDONTWRITEBYTECODE 1
-ENV PYTHONUNBUFFERED 1
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV PYTHONUNBUFFERED=1
 ENV FLASK_APP=app.py
 ENV FLASK_ENV=production
 ENV FLAG=DOSCOM{5uCc355fuL_SST1_3xpl01t_ma5t3r}
@@ -23,16 +23,12 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy application code
 COPY . .
 
-# Create flag file
-RUN echo $FLAG > /flag.txt && \
+# Create flag file dengan format yang benar
+RUN echo "$FLAG" > /flag.txt && \
     chmod 644 /flag.txt && \
-    # Secure the flag file
-    chown root:root /flag.txt && \
-    # Create a fake flag for red herring
-    echo "DOSCOM{f4k3rrr}" > /flag.txt && \
-    chmod 644 /flag.txt
+    chown root:root /flag.txt
 
-# Security hardening (optional)
+# Security hardening
 RUN chmod -R o-rwx /app && \
     adduser --disabled-password --gecos '' ctfuser && \
     chown -R ctfuser:ctfuser /app
