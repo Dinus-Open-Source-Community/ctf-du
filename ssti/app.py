@@ -1,7 +1,8 @@
 from flask import Flask, request, render_template_string, session
-import random
+import random, os
 
 app = Flask(__name__)
+app.secret_key = os.urandom(24)
 
 QUOTES = [
     "The only secure system is one that's powered off.",
